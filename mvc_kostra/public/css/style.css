@@ -1,0 +1,40 @@
+
+body{
+    background: #ffffff;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-position: right bottom;
+    background-image: url(../pic/obr8.jpg);
+}
+.homepage img{
+    float:right;
+}
+
+.navigace{
+    border-bottom: 1px solid #333;
+    border-bottom-color: gray;
+}
+.navigace p{
+    text-align: right;
+}
+.bocni-menu{
+    padding-top: 15px;
+}
+.content{
+    padding-top: 10px;
+}
+
+.page-header a{
+    color: purple;
+}
+a {
+    color: purple;
+}
+
+.page-header{
+    height: 150px;
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: 600px;
+    background-image: url("../pic/obr3.jpg");
+}

@@ -1,0 +1,30 @@
+{% extends "default.twig" %}
+{% block title %}Vystavovatelé{% endblock %}
+{% block content %}
+    <div>
+    <h1>Výpis vystavovatelů</h1>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Jméno</td>
+                <td>Příjmení</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for vystavovatel in vystavovatele%}
+                <tr>
+                    <td>{{vystavovatel.jmeno_vystavovatel}}</td>
+                    <td>{{vystavovatel.prijmeni_vystavovatelcol}}</td>
+                     
+                    {% if user != null %}
+                    <td> <a onClick="return confirm('Opravdu smazat?');" href="index.php?page=vystavovatele&smazat={{vystavovatel.id_vystavovatel}}">Smazat</a>
+                        
+                        <a href="index.php?page=uprava&upravit={{vystavovatel.id_vystavovatel}}&stranka=vystavovatele&a={{vystavovatel.jmeno_vystavovatel}}&b={{vystavovatel.prijmeni_vystavovatelcol}}&c={{vystavovatel.email_vystavovatel}}">Upravit </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

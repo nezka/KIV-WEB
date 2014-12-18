@@ -1,0 +1,31 @@
+{% extends "default.twig" %}
+{% block title %}Seznam psů{% endblock %}
+{% block content %}
+    <div>
+    <h1>Seznam psů</h1>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Jméno</td>
+                <td>Pohlaví</td>
+                <td>Třída</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pes in psi%}
+                <tr>
+                    <td>{{pes.jmeno_pes}}</td>
+                    <td>{{pes.pohlavi}}</td>
+                    <td>{{pes.trida}}</td>
+                    {% if user != null %}
+                    <td> <a onClick="return confirm('Opravdu smazat?');" href="index.php?page=psi&smazat={{pes.id_pes}}">Smazat</a>
+                        
+                        <a href="index.php?page=uprava&upravit={{pes.id_pes}}&stranka=psi&a={{pes.jmeno_pes}}&b={{pes.trida}}&c={{pes.pohlavi}}">Upravit </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    </div>
+{% endblock %}

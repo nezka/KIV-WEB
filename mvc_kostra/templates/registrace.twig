@@ -1,0 +1,55 @@
+{% extends "default.twig" %}
+{% block title %}Registrace{% endblock %}
+
+{% block content %}
+    <div>
+        <h1>Předběžná registrace</h1>
+        <p>
+            Toto je nezávazná registrace na národní výstavu konající se 20.6.-21.6.2015 v Klatovech. 
+            Vaše údaje budou použity pro zefektivnění přípravy a usnadnění práce organizátorů.
+            Po otevření oficiální registrace Vám bude na email zasláno upozornění.
+        </p>
+        <div class="well col-md-6">
+            <form id="registerForm" method="POST" action="" novalidate="novalidate">
+                <div class="form-group">
+                    <label for="username" class="control-label">Jméno</label>
+                    <input type="text" class="form-control" id="username" name="reg[jmeno]" value="" required="" title="Prosím, vyplňte Vaše jméno" placeholder="Jméno">
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="control-label">Příjmení</label>
+                    <input type="text" class="form-control" id="username" name="reg[prijmeni]" value="" required="" title="Prosím, vyplňte Vaše příjmení" placeholder="Příjmení">
+                    <span class="help-block"></span>
+                </div>
+               <div class="form-group">
+                    <label for="username" class="control-label">Email</label>
+                    <input type="email" class="form-control" id="username" name="reg[email]" value="" required="" title="Prosím, vyplňte Vaš email" placeholder="Email">
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="control-label">Jméno psa</label>
+                    <input type="text" class="form-control" id="dog" name="reg[pes]" value="" required="" title="Prosím, vyplňte jméno Vašeho psa" placeholder="Jméno psa">
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="control-label">Pohlaví psa (m/f)</label>
+                    <input type="text" class="form-control" id="dog" name="reg[pohl]" value="" required="" title="Prosím, vyplňte pohlaví Vašeho psa" placeholder="Pohlaví psa">
+                    <span class="help-block"></span>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="control-label">Třída psa</label>
+                    <input type="text" class="form-control" id="dog" name="reg[trida]" value="" required="" title="Prosím, vyplňte třídu Vašeho psa" placeholder="Třída psa">
+                    <span class="help-block"></span>
+                </div>
+         
+                
+                <br>
+                {% if hlaska != "" %}
+                    <div class="alert alert-danger">{{ hlaska|raw}}</div>
+                {% endif %}
+                <br>
+                <input onClick="return confirm('Potvrzuji, že zadaná data jsou správné.');" type="submit" name="registrace" value="Registrovat" class="btn btn-primary btn-block">
+            </form>   
+        </div>
+    </div>
+{% endblock %}

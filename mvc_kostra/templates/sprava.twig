@@ -1,0 +1,33 @@
+{% extends "default.twig" %}
+{% block title %}Správa{% endblock %}
+
+{% block content %}
+     <div class="bocni-menu col-md-6">
+            <div class="login">
+
+                {% if user is null %}
+                    <form action="" id="omg" method="post" novalidate="novalidate">
+
+                        <div class="form-group">
+                            <label for="login[login]" class="control-label">Nick</label>
+                            <input type="text" class="form-control" name="login[login]"  required title="Prosím vyplňte vaše přihlašovací jméno" placeholder="Uživatelské jméno">
+                            <span class="help-block"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="login[password]" class="control-label">Heslo</label>
+                            <input type="password" class="form-control" name="login[password]"  required title="Prosím vyplňte vaše přihlašovací jméno" placeholder="Heslo">
+                            <span class="help-block"></span>
+                        </div>
+                        <input type="submit" name="log" value="Přihlásit" class="btn btn-primary btn-block">
+                    </form>
+                   {% else %}
+                       <div>
+                          
+                           <img src="public/pic/obr11.jpg" alt="admin">
+                       </div>                        
+                       
+                {% endif %}
+
+            </div>
+        </div>
+{% endblock %}

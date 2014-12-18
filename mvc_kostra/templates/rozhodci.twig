@@ -1,0 +1,33 @@
+{% extends "default.twig" %}
+{% block title %}Rozhodčí{% endblock %}
+
+{% block content %}
+    
+        
+    <div>
+    <h1>Výpis rozhodčích</h1>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>Jméno</td>
+                <td>Příjmení</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for rozhodciR in rozhodci%}
+                <tr>
+                    <td>{{rozhodciR.jmeno_rozhodci}}</td>
+                    <td>{{rozhodciR.prijmeni_rozhodcicol}}</td>
+                    {% if user != null %}
+                    <td> <a onClick="return confirm('Opravdu smazat?');" href="index.php?page=rozhodci&smazat={{rozhodciR.id_rozhodci}}">Smazat</a>   
+                        <a href="index.php?page=uprava&upravit={{rozhodciR.id_rozhodci}}&stranka=rozhodci&a={{rozhodciR.jmeno_rozhodci}}&b={{rozhodciR.prijmeni_rozhodcicol}}">Upravit </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+            
+        </tbody>
+    </table>
+    </div>
+        
+{% endblock %}
