@@ -21,7 +21,10 @@ class Model extends MainModel {
          $stmt = $this->connection->prepare("INSERT INTO anezkaj_rozhodci VALUES (NULL, :jmeno, :prijmeni)");
             $stmt->bindParam(":jmeno", $data['jmeno'], PDO::PARAM_STR);
             $stmt->bindParam(":prijmeni", $data['prijmeni'], PDO::PARAM_STR);
-            //$stmt->bindParam(":email", $data['kruh'], PDO::PARAM_STR);
+           
+            //$id_last = connect->lastInsertId();
+            //pridejKruh($id_last, $dat['kruh']);
+        
             $stmt->execute();
     }
     
